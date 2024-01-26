@@ -12,6 +12,13 @@ import java.sql.SQLOutput;
 // 비동기 : 순서가 정해지지 않음
 @Getter
 public class NewsJasonParser extends BasicJsonParser {
+
+    private MyNews myNews;
+    public NewsJasonParser() {
+        myNews = null;
+    }
+
+
     public void loadFromUrl(String url) {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
@@ -37,17 +44,17 @@ public class NewsJasonParser extends BasicJsonParser {
 
 
         Gson gson = new Gson();
-        MyNews mynews = gson.fromJson(s, MyNews.class);
+        myNews = gson.fromJson(s, MyNews.class);
 
-        for(Article article : mynews.getArticles() ) {
-            System.out.println("작성자 : " + article.getAuthor());
-            System.out.println("타이틀 : " + article.getTitle());
-            System.out.println("요약 : " + article.getDescription());
-            System.out.println("원문기사 : " + article.getUrl());
-            System.out.println("원문이미지 : " + article.getUrlToImage());
-            System.out.println("발행일 : " + article.getPublishedAt());
-            System.out.println("출처 : " + article.getSource().getName());
-        }
+//        for(Article article : mynews.getArticles() ) {
+//            System.out.println("작성자 : " + article.getAuthor());
+//            System.out.println("타이틀 : " + article.getTitle());
+//            System.out.println("요약 : " + article.getDescription());
+//            System.out.println("원문기사 : " + article.getUrl());
+//            System.out.println("원문이미지 : " + article.getUrlToImage());
+//            System.out.println("발행일 : " + article.getPublishedAt());
+//            System.out.println("출처 : " + article.getSource().getName());
+//        }
 
 
     }
