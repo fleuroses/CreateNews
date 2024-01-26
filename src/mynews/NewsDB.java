@@ -62,5 +62,6 @@ public class NewsDB {
            throw new RuntimeException(e);
        }
        return 0;
-    }
+
+   }
 }

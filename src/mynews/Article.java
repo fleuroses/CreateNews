@@ -14,7 +14,6 @@ public class Article {
 //    private String publishedAt;
 //    private String content;
 
-
     private Source source;
     private String author;
     private String title;

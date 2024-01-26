@@ -19,7 +19,6 @@ public class BasicJsonParser {
                 builder.append(buffer, 0, readCount);
             }
 
-
         }
     }
 }
